@@ -1,0 +1,18 @@
+﻿@page
+@model MoviesReviewApp.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+<div>
+    <h2>Popular Movies</h2>
+    @foreach (var item in Model.Index)
+    {
+        @Html.DisplayFor(modelItem => item.poster_path)
+        @Html.DisplayFor(modelItem => item.title)
+        @Html.DisplayFor(modelItem => item.overview)
+    }
+</div>
