@@ -1,0 +1,202 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../Images/movie_background.jpg);
+    font-family: Dosis, sans-serif;
+}
+.logo{
+    width: 100px;
+}
+.ul-reesign {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    color: white;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    padding: 15px;
+}
+
+li {
+    float: left;
+    padding: 0px 15px;
+}
+
+   a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+li a:hover {
+   background-color: skyblue;
+}
+
+
+.mySlides {
+    display: none;
+    height:550px;
+}
+
+.images {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    left: 700px;
+    top: 30px;
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: 0px auto 0px auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 35%;
+    width: auto;
+    margin: 0px 200px;
+    color:antiquewhite;
+    font-size: 46px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+        background-color: cornflowerblue;
+    }
+
+/* Caption text */
+.text {
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    bottom: 300px;
+    width: 100%;
+}
+.movie-title {
+    font-family: Dosis, sans-serif;
+    font-weight: 700;
+    clear: both;
+    line-height: 1;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .prev, .next, .text {
+        font-size: 11px
+    }
+}
+
+.second-div {
+    background-color: rgb(2, 13, 24);
+    padding: 35px;
+}
+.tabs-container {
+    display: flex;
+}
+
+.tabs {
+    position: relative;
+    margin: 0px 15px;
+}
+.tabs-img{
+    width:200px;
+    height: 300px;
+}
+.tabs-text{
+    position: absolute;
+    bottom: 10px;
+}
+.footer-div {
+    padding: 80px;
+    font-weight: bold;
+}
+#video{
+    display:flex;
+}
+#video-item {
+    background-color: #0b1a2a;
+    position: relative;
+    padding: 15px;
+    height: 400px;
+    overflow: auto;
+    width: 400px;
+}
+iframe{
+    display: none;
+    position:relative;
+}
+.item-div {
+    display: flex;
+    padding: 15px 0px;
+}
+.item-div:hover {
+    background-color: #1c3d5d;
+}
+.item-title {
+    padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    header .navbar-toggle {
+        display: block;
+    }
+    .images {
+        left: 0px;
+        top: 0px;
+    }
+}
+@media screen (max-width: 991px)  {
+    header .navbar-default .navbar-toggle {
+        border: 1px solid #ffffff;
+    }
+}

@@ -1,18 +1,230 @@
 ﻿@page
-@model MoviesReviewApp.Pages.IndexModel
+@model IndexModel
 @{
+   
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-</div>
 <div>
-    <h2>Popular Movies</h2>
-    @foreach (var item in Model.Index)
-    {
-        @Html.DisplayFor(modelItem => item.poster_path)
-        @Html.DisplayFor(modelItem => item.title)
-        @Html.DisplayFor(modelItem => item.overview)
-    }
+    <div class="first-div">
+        <div class="slideshow-container">
+            @foreach (var item in Model.Index.results.OrderByDescending(res => res.release_date).Take(5))
+            {
+               
+                <div class="mySlides row">
+                    <img class="images img-fluid col-md-4" src="@item.imageFullpath" alt="@item.title" />
+                    <div class="text col-md-7">
+                        <p class="movie-title">@Html.DisplayFor(modelItem => item.title)</p>
+                        <p>
+
+                            Rating: &#11088; @Html.DisplayFor(modelItem => item.vote_average)/10 &nbsp;  &nbsp;
+                            Release Date: @Html.DisplayFor(modelItem => item.release_date)
+                        </p>
+                        <p>@Html.DisplayFor(modelItem => item.overview)</p>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!--end of the first division.  -->
+
+
+    <div class="second-div">
+        <div>
+            <h3>IN THEATRE</h3>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#upcome" aria-controls="upcome" role="tab" data-toggle="tab">UPCOMING</a></li>
+                <li role="presentation"><a href="#trending" aria-controls="trending" role="tab" data-toggle="tab">TRENDING</a></li>
+                <li role="presentation"><a href="#popular" aria-controls="popular" role="tab" data-toggle="tab">POPULAR</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="upcome">
+                    <div class="tabs-container">
+                        @foreach (var upcome in Model.Upcome.results.OrderByDescending(res => res.release_date).Take(6))
+                        {
+                            <div class="tabs">
+                                <img class="tabs-img" src="@upcome.imageFullpath" alt="@upcome.title" />
+                                <div class="tabs-text">
+                                    <p> @Html.DisplayFor(modelItem => upcome.title)</p>
+                                    <p> &#11088;@Html.DisplayFor(modelItem => upcome.vote_average) / 10</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="trending">
+                    <div class="tabs-container">
+                        @foreach (var trend in Model.Trend.results.Take(6))
+                        {
+                            <div class="tabs">
+                                <img class="tabs-img" src="@trend.imageFullpath" alt="@trend.title" />
+                                <div class="tabs-text">
+                                    <p> @Html.DisplayFor(modelItem => trend.title)</p>
+                                    <p> &#11088;@Html.DisplayFor(modelItem => trend.vote_average) / 10</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="popular">
+                    <div class="tabs-container">
+                        @foreach (var popular in Model.Index.results.Take(6))
+                        {
+                            <div class="tabs">
+                                <img class="tabs-img" src="@popular.imageFullpath" alt="@popular.title" />
+                                <div class="tabs-text">
+                                    <p> @Html.DisplayFor(modelItem => popular.title)</p>
+                                    <p> &#11088;@Html.DisplayFor(modelItem => popular.vote_average) / 10</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div>
+            <h3>TV SHOWS</h3>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#populartv" aria-controls="populartv" role="tab" data-toggle="tab"> POPULAR </a></li>
+                <li role="presentation"><a href="#topratedtv" aria-controls="topratedtv" role="tab" data-toggle="tab">TOP RATED</a></li>
+                <li role="presentation"><a href="#onairtv" aria-controls="onairtv" role="tab" data-toggle="tab">ON AIR</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="populartv">
+                    <div class="tabs-container">
+                        @foreach (var poptv in Model.TvShow.results.Take(6))
+                        {
+                            <div class="tabs">
+                                <img class="tabs-img" src="@poptv.fullImagePath" alt="@poptv.name" />
+                                <div class="tabs-text">
+                                    <p> @Html.DisplayFor(modelItem => poptv.name)</p>
+                                    <p> &#11088;@Html.DisplayFor(modelItem => poptv.vote_average) / 10</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="topratedtv">
+                    <div class="tabs-container">
+                        @foreach (var toprate in Model.TopRated.results.Take(6))
+                        {
+                            <div class="tabs">
+                                <img class="tabs-img" src="@toprate.fullImagePath" alt="@toprate.name" />
+                                <div class="tabs-text">
+                                    <p> @Html.DisplayFor(modelItem => toprate.name)</p>
+                                    <p> &#11088;@Html.DisplayFor(modelItem => toprate.vote_average) / 10</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="onairtv">
+                    <div class="tabs-container">
+                        @foreach (var onair in Model.showOnAir.results.Take(6))
+                        {
+                            <div class="tabs">
+                                <img class="tabs-img" src="@onair.fullImagePath" alt="@onair.name" />
+                                <div class="tabs-text">
+                                    <p> @Html.DisplayFor(modelItem => onair.name)</p>
+                                    <p> &#11088;@Html.DisplayFor(modelItem => onair.vote_average) / 10</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="playlist-videos">
+            <h3>IN THEATRE</h3>
+            <section>
+
+
+                @foreach (var video in Model.youtube.items.Take(3))
+                {
+                    <div class="container">
+                        <h2>Carousel Example</h2>
+                        <div id="myCarousel" class="carousel">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item">
+                                    <img src="@video.snippet.thumbnails.high.url" class="img-thumbnail" alt="@video.snippet.title" width="100" height="57" />
+
+                                    <iframe class="embed-responsive-item" src="@video.snippet.resourceId.videoURL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>
+
+                        </div>
+                    </div>
+
+                }
+
+
+
+                @*<div class="embed-responsive embed-responsive-21by9" width="621" height="400">
+            <iframe class="embed-responsive-item" src="@video.snippet.resourceId.videoURL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <article id="video-item">
+            <div class="item-div">
+                <img src="@video.snippet.thumbnails.high.url" class="img-thumbnail" alt="@video.snippet.title" width="100" height="57" />
+                <p class="item-title">@video.snippet.title</p>
+            </div>
+        </article>*@
+
+
+
+
+
+            </section>
+
+           
+        </div>
+    </div>
+
+  
+
 </div>
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>
