@@ -149,53 +149,24 @@
         </div>
 
         <div id="playlist-videos" onload="loadVideo()">
-            @*<h3>IN THEATRE</h3>
+            <h3>IN THEATRE</h3>
                 <section>
                     
 
                     @foreach (var video in Model.youtube.items.Take(3))
                     {
-                        <div class="container">
-                            <h2>Carousel Example</h2>
-                            <div id="myCarousel" class="carousel">
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner">
-                                    <div class="item">
-                                        <img src="@video.snippet.thumbnails.high.url" class="img-thumbnail" alt="@video.snippet.title" width="100" height="57" />
-
-                                        <iframe class="embed-responsive-item" src="@video.snippet.resourceId.videoURL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-
-                                <!-- Indicators -->
-                                <ol class="carousel-indicators">
-                                    <li data-target="#myCarousel" data-slide-to="0"></li>
-                                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                                </ol>
-
-                            </div>
-                        </div>
-
-                    }*@
-
-
-
-            @*<div class="embed-responsive embed-responsive-21by9" width="621" height="400">
+                        <div class="embed-responsive embed-responsive-21by9" width="621" height="400">
                     <iframe class="embed-responsive-item" src="@video.snippet.resourceId.videoURL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <article id="video-item">
-                    <div class="item-div">
-                        <img src="@video.snippet.thumbnails.high.url" class="img-thumbnail" alt="@video.snippet.title" width="100" height="57" />
-                        <p class="item-title">@video.snippet.title</p>
-                    </div>
-                </article>
+                        <article id="video-item">
+                            <div class="item-div">
+                                <img src="@video.snippet.thumbnails.high.url" class="img-thumbnail" alt="@video.snippet.title" width="100" height="57" />
+                                <p class="item-title">@video.snippet.title</p>
+                            </div>
+                        </article>
 
-
-
-
-
-                    </section>*@
+                    }
+                </section>
 
 
         </div>
