@@ -148,8 +148,8 @@
             </div>
         </div>
 
-        <div id="playlist-videos">
-            <h3>IN THEATRE</h3>
+        <div id="playlist-videos" onload="loadVideo()">
+            @*<h3>IN THEATRE</h3>
             <section>
 
 
@@ -177,7 +177,7 @@
                         </div>
                     </div>
 
-                }
+                }*@
 
 
 
@@ -189,13 +189,13 @@
                 <img src="@video.snippet.thumbnails.high.url" class="img-thumbnail" alt="@video.snippet.title" width="100" height="57" />
                 <p class="item-title">@video.snippet.title</p>
             </div>
-        </article>*@
+        </article>
 
 
 
 
 
-            </section>
+            </section>*@
 
            
         </div>
@@ -226,5 +226,12 @@
         }
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
+        }
+
+    function loadVideo() {
+        var playVideo = document.getElementById("playlist-videos");
+        playVideo.innerHTML(`<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/AJtDXIazrMo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      `)
     }
+
 </script>

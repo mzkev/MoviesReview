@@ -57,7 +57,7 @@ namespace MoviesReviewApp.Model
         public int height { get; set; }
     }
 
-    public 
+    
 
 
 }
