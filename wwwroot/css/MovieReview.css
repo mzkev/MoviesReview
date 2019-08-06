@@ -27,8 +27,9 @@ li {
    a {
         display: block;
         color: white;
+        margin: 0;
         text-align: center;
-        padding: 14px 16px;
+        /* padding: 14px 16px; */
         text-decoration: none;
     }
 
@@ -39,13 +40,13 @@ li a:hover {
 
 .mySlides {
     display: none;
-    height:550px;
+    /* height:550px; */
 }
 
 .images {
     vertical-align: middle;
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: -webkit-fill-available;
     position: relative;
     left: 700px;
     top: 30px;
@@ -54,9 +55,9 @@ li a:hover {
 
 /* Slideshow container */
 .slideshow-container {
-    max-width: 1000px;
+    /* max-width: 1000px; */
     position: relative;
-    margin: 0px auto 0px auto;
+    /* margin: 0px auto 0px auto; */
 }
 
 /* Next & previous buttons */
@@ -65,11 +66,11 @@ li a:hover {
     position: absolute;
     top: 35%;
     width: auto;
-    margin: 0px 200px;
+    /* margin: 0px 200px; */
     color:antiquewhite;
     font-size: 46px;
     transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
+    /* border-radius: 0 3px 3px 0; */
     user-select: none;
 }
 
@@ -90,14 +91,14 @@ li a:hover {
     font-size: 15px;
     position: absolute;
     bottom: 300px;
-    width: 100%;
+    /* max-width: 100%; */
 }
 .movie-title {
     font-family: Dosis, sans-serif;
     font-weight: 700;
     clear: both;
     line-height: 1;
-    font-size: 40px;
+    font-size: 30px;
     text-transform: uppercase;
 }
 
@@ -137,24 +138,28 @@ li a:hover {
 }
 
 .second-div {
-    background-color: rgb(2, 13, 24);
-    padding: 35px;
+    background-color: rgb(-6, 13, 24);
+    padding: 20px;
 }
 .tabs-container {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .tabs {
     position: relative;
     margin: 0px 15px;
+    padding: 0px;
 }
 .tabs-img{
-    width:200px;
-    height: 300px;
+    width: 270px;
+    /* height: 100%; */
 }
 .tabs-text{
-    position: absolute;
+    /* position: absolute; */
+    width: 200px;
     bottom: 10px;
+    /* color: pink !important; */
 }
 .footer-div {
     padding: 80px;
@@ -191,12 +196,69 @@ iframe{
         display: block;
     }
     .images {
-        left: 0px;
-        top: 0px;
+        left: 30px;
+        max-width: 300px;
+    }
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 35%;
+        width: auto;
+        margin: 0px 0px;
+        color: antiquewhite;
+        font-size: 16px;
+        transition: 0.6s ease;
+        border-radius: 0 1px 1px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 1px 0 0 1px;
+    }
+    .text {
+        color: white;
+        font-size: 15px;
+        position: relative;
+        bottom: 0px;
+        max-width: 100%;
+    }
+
+}
+@media screen and (min-width: 768px) {
+
+    .images {
+        vertical-align: middle;
+        width: 100%;
+        height: -webkit-fill-available;
+        position: relative;
+        left: 400px;
+        top: 30px;
+    }
+
+    .text {
+        color: white;
+        font-size: 13px;
+        position: relative;
+        left: 30px;
+        bottom: 240px;
+        max-width: 300px;
     }
 }
-@media screen (max-width: 991px)  {
+@media screen and (min-width: 991px)  {
     header .navbar-default .navbar-toggle {
         border: 1px solid #ffffff;
+    }
+    .images {
+        left: 30px;
+        max-width: 300px;
+    }
+     .text {
+        color: white;
+        font-size: 15px;
+        position: relative;
+        bottom: 250px;
+        max-width: 500px;
     }
 }

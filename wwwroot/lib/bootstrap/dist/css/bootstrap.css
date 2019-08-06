@@ -70,6 +70,7 @@ hr {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+  color: white;
 }
 
 p {
@@ -148,7 +149,7 @@ sup {
 }
 
 a {
-  color: #007bff;
+   color: white !important; 
   text-decoration: none;
   background-color: transparent;
 }
@@ -474,7 +475,7 @@ mark,
 }
 
 .img-fluid {
-  max-width: 100%;
+  max-width: 250px;
   height: auto;
 }
 
@@ -544,6 +545,7 @@ pre code {
 
 .container {
   width: 100%;
+  height: 600px;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -610,8 +612,9 @@ pre code {
 .col-xl-auto {
   position: relative;
   width: 100%;
-  padding-right: 15px;
   padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 30px;
 }
 
 .col {
@@ -992,7 +995,7 @@ pre code {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 991px) {
   .col-md {
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
@@ -1023,8 +1026,9 @@ pre code {
   }
   .col-md-4 {
     -ms-flex: 0 0 33.333333%;
-    flex: 0 0 33.333333%;
-    max-width: 33.333333%;
+    /* flex: 0 0 33.333333%; */
+    /* max-width: 33.333333%; */
+    left: 650px;
   }
   .col-md-5 {
     -ms-flex: 0 0 41.666667%;
@@ -1039,7 +1043,8 @@ pre code {
   .col-md-7 {
     -ms-flex: 0 0 58.333333%;
     flex: 0 0 58.333333%;
-    max-width: 58.333333%;
+    /* max-width: 58.333333%; */
+    left: 30px;
   }
   .col-md-8 {
     -ms-flex: 0 0 66.666667%;
@@ -4139,6 +4144,8 @@ input[type="button"].btn-block {
 
 .tab-content > .active {
   display: block;
+  /* color: gold; */
+  /* color: gold !important; */
 }
 
 .navbar {
@@ -4230,7 +4237,7 @@ input[type="button"].btn-block {
 }
 
 .navbar-toggler-icon {
-  color: whute;
+  color: white !important;
   display: inline-block;
   width: 1.5em;
   height: 1.5em;
@@ -4486,7 +4493,7 @@ input[type="button"].btn-block {
 }
 
 .navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .navbar-light .navbar-text {
