@@ -1,2 +1,6 @@
 language: csharp
 solution: MoviesReviewApp.sln
+install:
+  - nuget # lets get version number
+  - nuget restore src/MoviesReviewApp -Verbosity detailed
+  - nuget update src/MoviesReviewApp -Verbosity detailed
