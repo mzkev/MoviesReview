@@ -75,6 +75,10 @@
             "Microsoft.Owin.Security.OAuth": {
               "target": "Package",
               "version": "[4.0.1, )"
+            },
+            "Travis.Nuget.Example": {
+              "target": "Package",
+              "version": "[1.0.8, )"
             }
           },
           "imports": [
