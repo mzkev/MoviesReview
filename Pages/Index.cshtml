@@ -28,7 +28,7 @@
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
-        
+
     </div>
 
     <!--end of the first division.  -->
@@ -150,23 +150,23 @@
 
         <div id="playlist-videos" onload="loadVideo()">
             <h3>IN THEATRE</h3>
-                <section>
-                    
+            <section>
 
-                    @foreach (var video in Model.youtube.items.Take(3))
-                    {
-                        <div class="embed-responsive embed-responsive-21by9" width="621" height="400">
-                    <iframe class="embed-responsive-item" src="@video.snippet.resourceId.videoURL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                        <article id="video-item">
-                            <div class="item-div">
-                                <img src="@video.snippet.thumbnails.high.url" class="img-thumbnail" alt="@video.snippet.title" width="100" height="57" />
-                                <p class="item-title">@video.snippet.title</p>
-                            </div>
-                        </article>
 
-                    }
-                </section>
+                @foreach (var video in Model.youtube.items.Take(3))
+                {
+                    <div class="embed-responsive embed-responsive-21by9" width="621" height="400">
+                        <iframe class="embed-responsive-item" src="@video.snippet.resourceId.videoURL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <article id="video-item">
+                        <div class="item-div">
+                            <img src="@video.snippet.thumbnails.high.url" class="img-thumbnail" alt="@video.snippet.title" width="100" height="57" />
+                            <p class="item-title">@video.snippet.title</p>
+                        </div>
+                    </article>
+
+                }
+            </section>
 
 
         </div>

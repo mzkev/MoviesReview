@@ -1,0 +1,21 @@
+﻿@page
+@model MoviesReviewApp.Pages.IndexModel
+@{
+    ViewData["Title"] = "Gallery";
+}
+
+<h1>Gallery</h1>
+
+<div class="tabs-container container-fluid">
+    @foreach (var trend in Model.Trend.results.OrderByDescending(res => res.release_date).Take(12))
+    {
+        <div class="tabs">
+            <img class="tabs-img" src="@trend.imageFullpath" alt="@trend.title" />
+            <div class="tabs-text">
+                <p> @Html.DisplayFor(modelItem => trend.title)</p>
+                <p> &#11088;@Html.DisplayFor(modelItem => trend.vote_average) / 10</p>
+                <p> @Html.DisplayFor(modelItem => trend.release_date)</p>
+            </div>
+        </div>
+    }
+</div>

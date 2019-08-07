@@ -2968,6 +2968,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Pages\\Gallery.cshtml",
+      "TargetPath": "Pages\\Gallery.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Pages\\Error.cshtml",
       "TargetPath": "Pages\\Error.cshtml",
       "FileKind": "mvc"

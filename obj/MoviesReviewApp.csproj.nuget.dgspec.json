@@ -76,6 +76,10 @@
               "target": "Package",
               "version": "[4.0.1, )"
             },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
             "Travis.Nuget.Example": {
               "target": "Package",
               "version": "[1.0.8, )"

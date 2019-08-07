@@ -28,3 +28,4 @@ C:\Users\Kevwe\source\repos\MoviesReviewApp\obj\Debug\netcoreapp2.2\MoviesReview
 C:\Users\Kevwe\source\repos\MoviesReviewApp\obj\Debug\netcoreapp2.2\MoviesReviewApp.dll
 C:\Users\Kevwe\source\repos\MoviesReviewApp\obj\Debug\netcoreapp2.2\MoviesReviewApp.pdb
 C:\Users\Kevwe\source\repos\MoviesReviewApp\obj\Debug\netcoreapp2.2\MoviesReviewApp.csproj.CopyComplete
+C:\Users\Kevwe\source\repos\MoviesReviewApp\obj\Debug\netcoreapp2.2\Razor\Pages\Gallery.g.cshtml.cs

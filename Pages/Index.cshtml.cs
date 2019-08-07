@@ -21,9 +21,9 @@ namespace MoviesReviewApp.Pages
             youtube_key = _configuration["Youtube_Key"];
             youtube_playlistId = _configuration["Youtube_Playlist"];
         }
-        
+
         HttpClient httpClient = new HttpClient();
-       
+
         public async Task OnGet()
         {
             await PopularMovies();
@@ -33,18 +33,18 @@ namespace MoviesReviewApp.Pages
             await TvShowsTopR();
             await ShowAiring();
             await GetYoutubeVideos();
-            
+
         }
         public PopularMovie Index { get; set; }
         public PopularMovie Trend { get; set; }
         public PopularMovie Upcome { get; set; }
         public TvShowOnAir TvShow { get; set; }
         public TvShowOnAir TopRated { get; set; }
-        public TvShowOnAir  showOnAir { get; set; }
+        public TvShowOnAir showOnAir { get; set; }
         public SearchResult youtube { get; set; }
 
 
-        
+
         public async Task PopularMovies()
         {
             var response = await httpClient.GetAsync($"https://api.themoviedb.org/3/movie/popular?api_key={api_key}&language=en-US");
@@ -52,7 +52,7 @@ namespace MoviesReviewApp.Pages
             if (response.IsSuccessStatusCode)
             {
                 Index = JsonConvert.DeserializeObject<PopularMovie>(apiResponse);
-                
+
             }
         }
         public async Task TrendingMovies()
@@ -63,7 +63,7 @@ namespace MoviesReviewApp.Pages
             {
                 Trend = JsonConvert.DeserializeObject<PopularMovie>(apiRes);
             }
-            
+
         }
         public async Task UpcomingMovies()
         {
@@ -73,7 +73,7 @@ namespace MoviesReviewApp.Pages
             if (response.IsSuccessStatusCode)
             {
                 Upcome = JsonConvert.DeserializeObject<PopularMovie>(apiResponse);
-              
+
             }
 
         }
@@ -117,7 +117,7 @@ namespace MoviesReviewApp.Pages
             if (response.IsSuccessStatusCode)
             {
                 youtube = JsonConvert.DeserializeObject<SearchResult>(apiResponse);
-                
+
             }
         }
 
