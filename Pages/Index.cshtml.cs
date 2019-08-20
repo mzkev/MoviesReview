@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -32,7 +34,7 @@ namespace MoviesReviewApp.Pages
             await TvShowsPopular();
             await TvShowsTopR();
             await ShowAiring();
-            await GetYoutubeVideos();
+            //await GetYoutubeVideos();
 
         }
         public PopularMovie Index { get; set; }
@@ -42,6 +44,7 @@ namespace MoviesReviewApp.Pages
         public TvShowOnAir TopRated { get; set; }
         public TvShowOnAir showOnAir { get; set; }
         public SearchResult youtube { get; set; }
+        public string[] movieresult { get; set; }
 
 
 
@@ -52,7 +55,7 @@ namespace MoviesReviewApp.Pages
             if (response.IsSuccessStatusCode)
             {
                 Index = JsonConvert.DeserializeObject<PopularMovie>(apiResponse);
-
+               
             }
         }
         public async Task TrendingMovies()
@@ -110,16 +113,16 @@ namespace MoviesReviewApp.Pages
             }
         }
 
-        public async Task GetYoutubeVideos()
-        {
-            var response = await httpClient.GetAsync($"https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId={youtube_playlistId}&key={youtube_key}");
-            string apiResponse = await response.Content.ReadAsStringAsync();
-            if (response.IsSuccessStatusCode)
-            {
-                youtube = JsonConvert.DeserializeObject<SearchResult>(apiResponse);
+        //public async Task GetYoutubeVideos()
+        //{
+        //    var response = await httpClient.GetAsync($"https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId={youtube_playlistId}&key={youtube_key}");
+        //    string apiResponse = await response.Content.ReadAsStringAsync();
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        youtube = JsonConvert.DeserializeObject<SearchResult>(apiResponse);
 
-            }
-        }
+        //    }
+        //}
 
 
     }

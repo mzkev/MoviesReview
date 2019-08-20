@@ -153,10 +153,10 @@
             <section>
 
 
-                @foreach (var video in Model.youtube.items.Take(3))
+                @*@foreach (var video in Model.youtube.items.Take(3))
                 {
                     <div class="embed-responsive embed-responsive-21by9" width="621" height="400">
-                        <iframe class="embed-responsive-item" src="@video.snippet.resourceId.videoURL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe class="embed-responsive-item" src="@video.id.videoURL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <article id="video-item">
                         <div class="item-div">
@@ -165,7 +165,7 @@
                         </div>
                     </article>
 
-                }
+                }*@
             </section>
 
 

@@ -22,7 +22,7 @@ namespace MoviesReviewApp.Model
     }
     public class YoutubeVideo
     {
-        public string id { get; set; }
+        public ID id { get; set; }
         public Snippet snippet { get; set; }
     }
     public class Snippet
@@ -30,13 +30,12 @@ namespace MoviesReviewApp.Model
         public string title { get; set; }
         public string description { get; set; }
         public Thumbnails thumbnails { get; set; }
-        public Video resourceId { get; set; }
     }
     public class Thumbnails
     {
         public High high { get; set; }
     }
-    public class Video
+    public class ID
     {
         public string kind { get; set; }
         public string videoId { get; set; }

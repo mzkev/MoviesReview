@@ -1,21 +1,18 @@
 ﻿@page
-@model MoviesReviewApp.Pages.IndexModel
+@model MoviesReviewApp.Pages.GalleryModel
 @{
     ViewData["Title"] = "Gallery";
 }
 
 <h1>Gallery</h1>
-
-<div class="tabs-container container-fluid">
-    @foreach (var trend in Model.Trend.results.OrderByDescending(res => res.release_date).Take(12))
-    {
-        <div class="tabs">
-            <img class="tabs-img" src="@trend.imageFullpath" alt="@trend.title" />
-            <div class="tabs-text">
-                <p> @Html.DisplayFor(modelItem => trend.title)</p>
-                <p> &#11088;@Html.DisplayFor(modelItem => trend.vote_average) / 10</p>
-                <p> @Html.DisplayFor(modelItem => trend.release_date)</p>
-            </div>
+<div role="tabpanel" class="tab-pane" id="onairtv">
+    <div class="tabs-container">
+        @foreach(var movie in Model.result.Take(6))
+        {
+         <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                                    <iframe class="embed-responsive-item" src="@movie.id.videoURL"
+                                            allowfullscreen frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+                                </div>
+        }
         </div>
-    }
 </div>
